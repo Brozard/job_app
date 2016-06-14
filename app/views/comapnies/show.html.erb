@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @comapny.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @comapny.location %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @comapny.industry %>
+</p>
+
+<%= link_to 'Edit', edit_comapny_path(@comapny) %> |
+<%= link_to 'Back', comapnies_path %>
