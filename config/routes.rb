@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'static/welcome'
+
+  get 'static/about'
+
+  get 'static/signup'
+
+  get 'static/signin'
+
   resources :users
   resources :comapnies
   resources :job_postings
