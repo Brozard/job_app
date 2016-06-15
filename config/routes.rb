@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'session/new'
+
+  get 'session/create'
+
+  get 'session/destroy'
+
+  root 'static#welcome'
+  
   get 'static/welcome'
 
   get 'static/about'
