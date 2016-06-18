@@ -12,28 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :job_title %><br>
+    <%= f.text_field :job_title %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-  <div class="field">
-    <%= f.label :company_id %><br>
-    <%= f.number_field :company_id %>
-  </div>
+  <%#= f.form_for :company do |ff| %>
+    <div class="field">
+      <%#= ff.label :company_name %><br>
+      <%#= ff.number_field :company_name %>
+    </div>
+  <%# end %>
   <div class="field">
     <%= f.label :posting_date %><br>
     <%= f.date_select :posting_date %>
   </div>
   <div class="field">
-    <%= f.label :is_applied_for %><br>
-    <%= f.check_box :is_applied_for %>
-  </div>
-  <div class="field">
-    <%= f.label :is_rejected %><br>
-    <%= f.check_box :is_rejected %>
+    <%= f.label :is_filled %><br>
+    <%= f.check_box :is_filled %>
   </div>
   <div class="actions">
     <%= f.submit %>

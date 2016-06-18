@@ -2,3 +2,11 @@
   <h1>Jobs are out there. Apply for them.</h1>
   <p>The community has lots of open web development roles. Use this site to track the ones you've applied for, who you should be following up with, and how often you're following up.</p>
 </div>
+<div>
+  <% if current_user %>
+    <%= link_to "Apply for jobs", job_postings_path %>
+    <%= link_to "Create new job posting", new_job_posting_path %>
+  <% else %>
+    <%= link_to "Log in", login_path %> or <%= link_to "create a new user", new_user_path %>
+  <% end %>
+</div>

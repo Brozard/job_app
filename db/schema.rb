@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618002534) do
+ActiveRecord::Schema.define(version: 20160618033104) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "company_name"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20160618002534) do
     t.boolean  "is_filled"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "buyer_id"
+    t.integer  "company_id"
+    t.string   "posting_url"
   end
 
-  add_index "job_postings", ["buyer_id"], name: "index_job_postings_on_buyer_id"
+  add_index "job_postings", ["company_id"], name: "index_job_postings_on_company_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
