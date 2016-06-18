@@ -10,10 +10,13 @@ class User < ActiveRecord::Base
             presence: true
   validates :email,
             presence: true,
+            confirmation: true,
             length: { maximum: 50 },
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
-  validates :password, presence: true
+  validates :password_digest,
+            presence: true,
+            confirmation: true
   validates :bio,
             length: { maximum: 250 }
 
