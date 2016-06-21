@@ -11,6 +11,28 @@
     </div>
   <% end %>
 
+
+
+
+
+  <%= f.fields_for(:company) do |ff| %>
+    <div>
+      <%= ff.label :company_name %><br>
+      <%= ff.text_field :company_name %>
+    </div>
+    <div>
+      <%= ff.label :location %><br>
+      <%= ff.text_field :location %>
+    </div>
+    <div>
+      <%= ff.label :industry %><br>
+      <%= ff.text_field :industry %>
+    </div>
+  <% end %>
+
+
+
+
   <div class="field">
     <%= f.label :job_title %><br>
     <%= f.text_field :job_title %>
@@ -20,10 +42,10 @@
     <%= f.text_field :description %>
   </div>
   <%#= f.form_for :company do |ff| %>
-    <div class="field">
+    <!-- <div class="field"> -->
       <%#= ff.label :company_name %><br>
       <%#= ff.number_field :company_name %>
-    </div>
+    <!-- </div> -->
   <%# end %>
   <div class="field">
     <%= f.label :posting_date %><br>
