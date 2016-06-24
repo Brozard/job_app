@@ -5,37 +5,38 @@
   <%= @job_posting.job_title %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job_posting.description %>
-</p>
-
-<p>
-  <strong>Company ID:</strong>
-  <%= @job_posting.company_id %>
-</p>
-
 <% unless @job_posting.company_id.nil? %>
 
-<p>
-  <strong>Company Name:</strong>
-  <%= @job_posting.company.company_name %>
-</p>
+  <% unless @job_posting.company.company_name.nil? %>
+    <p>
+      <strong>Company Name:</strong>
+      <%= @job_posting.company.company_name %>
+    </p>
+  <% end %>
 
-<p>
-  <strong>Location:</strong>
-  <%= @job_posting.company.location %>
-</p>
+  <% unless @job_posting.company.location.nil? %>
+    <p>
+      <strong>Location:</strong>
+      <%= @job_posting.company.location %>
+    </p>
+  <% end %>
 
-<p>
-  <strong>Industry:</strong>
-  <%= @job_posting.company.industry %>
-</p>
+  <% unless @job_posting.company.industry.nil? %>
+    <p>
+      <strong>Industry:</strong>
+      <%= @job_posting.company.industry %>
+    </p>
+  <% end %>
 
 <% end %>
 
 <p>
-  <strong>Posting date:</strong>
+  <strong>Job Description:</strong>
+  <%= @job_posting.description %>
+</p>
+
+<p>
+  <strong>Posting Date:</strong>
   <%= @job_posting.posting_date %>
 </p>
 

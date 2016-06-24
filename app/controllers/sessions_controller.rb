@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:id] = user.id
       redirect_to '/', notice: 'Logged in!'
     else
-      render :new
+      redirect_to '/login', notice: 'Your email and/or password are incorrect.'
     end
   end
 
