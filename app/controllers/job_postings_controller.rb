@@ -81,12 +81,13 @@ class JobPostingsController < ApplicationController
         # Do not run the following code if there is no Company Name params value.
         # If this is true, then that means we have an associated Company value that we wish to remove.
         # If this is not true, then we as associating either a new or existing Company value to this Job Posting.
-        unless !params["job_posting"]["company"]["company_name"]
+        if !params["job_posting"]["company"]["company_name"]
+          # Remove the Company associated with this Job Posting
+          @job_posting.company_id = nil
+        else
           # Associate the Company with the Job Posting
           @job_posting.company_id = find_company
         end
-        # Remove the Company associated with this Job Posting
-        @job_posting.company_id = nil
       end
     end
 
