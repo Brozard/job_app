@@ -70,7 +70,7 @@ class JobPostingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_posting_params
-      params.require(:job_posting).permit(:job_title, :description, :company_id, :posting_date, :is_filled, :company_attributes => [:company_name, :location, :industry])
+      params.require(:job_posting).permit(:job_title, :description, :company_id, :posting_date, :posting_url, :is_filled, :company_attributes => [:company_name, :location, :industry])
     end
 
     def set_company
