@@ -4,7 +4,7 @@ class JobPostingsController < ApplicationController
   # GET /job_postings
   # GET /job_postings.json
   def index
-    @job_postings = JobPosting.all
+    @job_postings = JobPosting.includes(:company).all
   end
 
   # GET /job_postings/1

@@ -20,9 +20,9 @@
     <% @job_postings.each do |job_posting| %>
       <tr>
         <td><%= job_posting.posting_date %></td>
-        <td><%= job_posting.title %></td>
+        <td><%= job_posting.job_title %></td>
         <td><%= job_posting.description %></td>
-        <td><%= job_posting.company.company_name %></td>
+        <td><%= job_posting.company.nil? ? "" : job_posting.company.company_name %></td>
         <td><%= link_to "Link", job_posting.posting_url %></td>
         <!-- <td><%#= job_posting.is_applied_for %></td> -->
         <!-- <td><%#= job_posting.is_rejected %></td> -->
