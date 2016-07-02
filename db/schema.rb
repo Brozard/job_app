@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618033104) do
+ActiveRecord::Schema.define(version: 20160629185846) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "company_name"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20160618033104) do
   end
 
   add_index "job_postings", ["company_id"], name: "index_job_postings_on_company_id"
+
+  create_table "user_job_applications", id: false, force: :cascade do |t|
+    t.integer "user_id",         null: false
+    t.integer "job_posting_id",  null: false
+    t.integer "users_id"
+    t.integer "job_postings_id"
+    t.boolean "is_rejected"
+  end
+
+  add_index "user_job_applications", ["job_postings_id"], name: "index_user_job_applications_on_job_postings_id"
+  add_index "user_job_applications", ["users_id"], name: "index_user_job_applications_on_users_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
